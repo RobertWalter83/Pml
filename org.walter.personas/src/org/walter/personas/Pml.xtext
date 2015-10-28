@@ -1,0 +1,81 @@
+grammar org.walter.personas.Pml with org.eclipse.xtext.common.Terminals
+
+generate pml "http://www.walter.org/personas/Pml"
+
+PmlRoot:
+	rgimport+=Import*
+	rgtemplate+=Template*
+	globals=Globals?
+	rgpersona+=Persona*;
+
+Import:
+	'import' importedNamespace=ID;
+
+Template:
+	'template' name=ID
+	defaults+=DefaultAttribute*
+	customs+=CustomAttribute (customs+=CustomAttribute)*
+	'end';
+
+DefaultAttribute: 
+	'full name' | 'age' | 'description' | 'sex' ;
+
+CustomAttribute:
+	required=Required? caName=CustomAttributeName 'as' 
+	(attributeType=AttributeType | '(' rgenumValue+=EnumValue (',' rgenumValue+=EnumValue)* ')');
+
+Required:
+	'!' | 'required'
+;
+
+CustomAttributeName:
+	name=ID;
+
+EnumValue:
+	name=EnumID;
+
+EnumID:
+	INT | ID
+;
+
+enum AttributeType:
+	NUMBER | TEXT;
+
+Globals:
+	'global' 'attributes'
+	customs+=CustomAttribute (customs+=CustomAttribute)*
+	'end';
+
+Persona:
+	'persona' name=ID ('uses' template=[Template])?
+	rgproperty+=Property*
+	'end';
+
+Property:
+	DefaultProperty | CustomProperty;
+
+DefaultProperty:
+	FullName | Description | Age | Sex;
+
+FullName:
+	'full name' value=STRING comment=COMMENT?;
+
+Description:
+	'description' value=STRING comment=COMMENT?;
+
+Age:
+	'age' value=INT comment=COMMENT?;
+
+Sex:
+	'sex' value=PersonaSex comment=COMMENT?;
+
+enum PersonaSex:
+	male | female;
+
+CustomProperty:
+	customAttributeRef=[CustomAttributeName|ID]
+	(stringValue=STRING | intValue=INT | '('enumValue=[EnumValue|EnumID]')')
+	comment=COMMENT?;
+
+terminal COMMENT:
+	'['->']';

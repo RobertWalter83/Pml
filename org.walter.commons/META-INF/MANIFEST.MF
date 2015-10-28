@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.walter.commons
+Bundle-SymbolicName: org.walter.commons
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.walter.commons.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.xtext.xbase.lib,
+ org.eclipse.xtext
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Export-Package: org.walter.commons,
+ org.walter.commons.linking

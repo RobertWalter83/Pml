@@ -1,0 +1,32 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.walter.personas
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.walter.personas; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext;visibility:=reexport,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.xtext.util,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.common,
+ org.eclipse.xtext.xbase.lib,
+ org.antlr.runtime,
+ org.eclipse.xtext.common.types,
+ org.objectweb.asm;bundle-version="[5.0.1,6.0.0)";resolution:=optional,
+ org.walter.commons;bundle-version="1.0.0"
+Import-Package: org.apache.log4j
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.walter.personas,
+ org.walter.personas.formatting,
+ org.walter.personas.generator,
+ org.walter.personas.parser.antlr,
+ org.walter.personas.parser.antlr.internal,
+ org.walter.personas.pml,
+ org.walter.personas.pml.impl,
+ org.walter.personas.pml.util,
+ org.walter.personas.scoping,
+ org.walter.personas.serializer,
+ org.walter.personas.services,
+ org.walter.personas.util,
+ org.walter.personas.validation

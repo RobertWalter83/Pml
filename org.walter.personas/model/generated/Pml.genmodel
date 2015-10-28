@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.walter.personas/src-gen" editDirectory="/org.walter.personas.edit/src"
+    editorDirectory="/org.walter.personas.editor/src" modelPluginID="org.walter.personas"
+    forceOverwrite="true" modelName="Pml" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="6.0" copyrightFields="false" editPluginID="org.walter.personas.edit"
+    editorPluginID="org.walter.personas.editor" runtimeVersion="2.11">
+  <genPackages prefix="Pml" basePackage="org.walter.personas" disposableProviderFactory="true"
+      fileExtensions="pml" ecorePackage="Pml.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Pml.ecore#//AttributeType">
+      <genEnumLiterals ecoreEnumLiteral="Pml.ecore#//AttributeType/NUMBER"/>
+      <genEnumLiterals ecoreEnumLiteral="Pml.ecore#//AttributeType/TEXT"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Pml.ecore#//PersonaSex">
+      <genEnumLiterals ecoreEnumLiteral="Pml.ecore#//PersonaSex/male"/>
+      <genEnumLiterals ecoreEnumLiteral="Pml.ecore#//PersonaSex/female"/>
+    </genEnums>
+    <genClasses ecoreClass="Pml.ecore#//PmlRoot">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Pml.ecore#//PmlRoot/rgimport"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Pml.ecore#//PmlRoot/rgtemplate"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Pml.ecore#//PmlRoot/globals"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Pml.ecore#//PmlRoot/rgpersona"/>
+    </genClasses>
+    <genClasses ecoreClass="Pml.ecore#//Import">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Pml.ecore#//Import/importedNamespace"/>
+    </genClasses>
+    <genClasses ecoreClass="Pml.ecore#//Template">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Pml.ecore#//Template/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Pml.ecore#//Template/defaults"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Pml.ecore#//Template/customs"/>
+    </genClasses>
+    <genClasses ecoreClass="Pml.ecore#//CustomAttribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Pml.ecore#//CustomAttribute/required"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Pml.ecore#//CustomAttribute/caName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Pml.ecore#//CustomAttribute/attributeType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Pml.ecore#//CustomAttribute/rgenumValue"/>
+    </genClasses>
+    <genClasses ecoreClass="Pml.ecore#//CustomAttributeName">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Pml.ecore#//CustomAttributeName/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Pml.ecore#//EnumValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Pml.ecore#//EnumValue/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Pml.ecore#//Globals">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Pml.ecore#//Globals/customs"/>
+    </genClasses>
+    <genClasses ecoreClass="Pml.ecore#//Persona">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Pml.ecore#//Persona/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Pml.ecore#//Persona/template"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Pml.ecore#//Persona/rgproperty"/>
+    </genClasses>
+    <genClasses ecoreClass="Pml.ecore#//Property">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Pml.ecore#//Property/comment"/>
+    </genClasses>
+    <genClasses ecoreClass="Pml.ecore#//DefaultProperty"/>
+    <genClasses ecoreClass="Pml.ecore#//FullName">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Pml.ecore#//FullName/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Pml.ecore#//Description">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Pml.ecore#//Description/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Pml.ecore#//Age">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Pml.ecore#//Age/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Pml.ecore#//Sex">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Pml.ecore#//Sex/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Pml.ecore#//CustomProperty">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Pml.ecore#//CustomProperty/customAttributeRef"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Pml.ecore#//CustomProperty/stringValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Pml.ecore#//CustomProperty/intValue"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Pml.ecore#//CustomProperty/enumValue"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
